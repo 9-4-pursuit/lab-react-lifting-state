@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v1 as generateUniqueID } from "uuid";
 
-export default function NewEventForm({ handleAddEvent }, props) {
+export default function NewEventForm({ events,setEvents }) {
 
     
     const [newEvent, setNewEvent] = useState({
@@ -16,7 +16,9 @@ export default function NewEventForm({ handleAddEvent }, props) {
 
       const [selectOption, setSelectOption] = useState("");
 
-      const events = props.events;
+      
+      
+      
 
     function handleSelectChange(e) {
         setSelectOption(e.target.value);
@@ -34,6 +36,10 @@ export default function NewEventForm({ handleAddEvent }, props) {
           [e.target.id]: e.target.value,
         });
     }
+
+    function handleAddEvent(event) {
+        setEvents([event, ...events]);
+      }
 
     function addEvent() {
         const createEvent = {
@@ -59,6 +65,8 @@ export default function NewEventForm({ handleAddEvent }, props) {
         });
         setSelectOption("");
       }
+
+      
 
 
     return (<form onSubmit={handleSubmit}>
