@@ -60,7 +60,7 @@ function App() {
               const { people: attendees } = event;
 
               return (
-                <Event />
+                <Event updateEventAttendance={updateEventAttendance}/>
               );
             })}
           </ul>
