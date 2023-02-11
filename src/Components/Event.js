@@ -1,4 +1,5 @@
-export default function Event({updateEventAttendance}) {
+
+export default function Event({updateEventAttendance, attendees}) {
   function toggleEventAttendees() {
     setShowAttendees(!showAttendees);
   }
