@@ -17,7 +17,7 @@ export default function Event({updateEventAttendance, attendees, event}) {
                     <br />
                     <span>Organized by: {event.organizer} </span>
                     <br />
-                    <>
+                    <div className="event">
                       <button onClick={toggleEventAttendees}>
                         {!showAttendees ? "Show Attendees" : "Hide Attendees"}
                       </button>
@@ -25,7 +25,7 @@ export default function Event({updateEventAttendance, attendees, event}) {
                       {showAttendees ? (
                        <Attendees updateEventAttendance={updateEventAttendance} attendees={attendees} event={event} />
                       ) : null}
-                    </>
+                    </div>
                   </li>
   );
 }
