@@ -54,7 +54,7 @@ function App() {
       </>
       <main>
         <div className="new-event">
-          <NewEventForm />
+          <NewEventForm handleAddEvent={handleAddEvent}/>
         </div>
         <div className="events">
           <ul>
