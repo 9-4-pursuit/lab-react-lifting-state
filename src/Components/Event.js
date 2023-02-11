@@ -23,7 +23,7 @@ export default function Event({updateEventAttendance, attendees, event}) {
                       </button>
 
                       {showAttendees ? (
-                       <Attendees />
+                       <Attendees updateEventAttendance={updateEventAttendance} attendees={attendees} event={event} />
                       ) : null}
                     </>
                   </li>
