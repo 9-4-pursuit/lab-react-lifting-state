@@ -1,4 +1,58 @@
+import { useState } from "react";
+import { v1 as generateUniqueID } from "uuid";
+
 export default function NewEventForm({ handleAddEvent }) {
+
+  const [selectOption, setSelectOption] = useState("");
+  const [newEvent, setNewEvent] = useState({
+    id: "",
+    eventType: "",
+    name: "",
+    organizer: "",
+    eventImage: "",
+    date: "",
+    people: [],
+  });
+
+  function addEvent() {
+    const createEvent = {
+      id: generateUniqueID(),
+      eventType: selectOption,
+      name: newEvent.name,
+      organizer: newEvent.organizer,
+      eventImage: newEvent.eventImage || "https://loremflickr.com/640/480/",
+      date: newEvent.date,
+      people: [],
+    };
+    handleAddEvent(createEvent);
+  }
+
+  function handleTextChange(e) {
+    setNewEvent({
+      ...newEvent,
+      [e.target.id]: e.target.value,
+    });
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    addEvent();
+    resetEventForm();
+  }
+  function handleSelectChange(e) {
+    setSelectOption(e.target.value);
+  }
+  function resetEventForm() {
+    setNewEvent({
+      id: "",
+      eventType: "",
+      name: "",
+      organizer: "",
+      eventImage: "",
+      date: "",
+    });
+    setSelectOption("");
+  }
+
   return(
     <form onSubmit={handleSubmit}>
     <h3>Create a new event</h3>
