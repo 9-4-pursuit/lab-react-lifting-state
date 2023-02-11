@@ -9,23 +9,9 @@ import Event from "./Components/Event";
 function App() {
   const [events, setEvents] = useState(eventsData);
 
-
-
-
-
-
- 
-
-
-
-
-
-
-
   function handleAddEvent(event) {
     setEvents([event, ...events]);
   }
-
 
 
   function updateEventAttendance(eventId, attendeeId) {
