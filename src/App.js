@@ -9,7 +9,6 @@ import Event from "./Components/Event";
 function App() {
   const [events, setEvents] = useState(eventsData);
 
-  const [showAttendees, setShowAttendees] = useState(false);
 
 
 

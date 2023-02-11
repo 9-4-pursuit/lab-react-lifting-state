@@ -1,5 +1,8 @@
+import { useState } from "react";
+export default function Event({updateEventAttendance, attendees, event}) {
 
-export default function Event({updateEventAttendance, attendees}) {
+  const [showAttendees, setShowAttendees] = useState(false);
+
   function toggleEventAttendees() {
     setShowAttendees(!showAttendees);
   }
