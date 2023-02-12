@@ -1,6 +1,5 @@
 import { useState } from "react";
 import eventsData from "./data";
-// import Attendees from "./Attendees";
 import Event from "./Components/Event";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
@@ -10,14 +9,8 @@ import NewEventForm from "./Components/NewEventForm";
 function App() {
   const [events, setEvents] = useState(eventsData);
 
-  const [showAttendees, setShowAttendees] = useState(false);
-
   function handleAddEvent(event) {
     setEvents([event, ...events]);
-  }
-
-  function toggleEventAttendees() {
-    setShowAttendees(!showAttendees);
   }
 
   function updateEventAttendance(eventId, attendeeId) {
@@ -54,7 +47,11 @@ function App() {
 
               return (
                 <>
-                  <Event />
+                  <Event 
+                  attendees={attendees} 
+                  event={event}
+                  updateEventAttendance={updateEventAttendance}
+                  />
                 </>
               );
             })}
