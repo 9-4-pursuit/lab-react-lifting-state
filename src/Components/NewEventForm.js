@@ -56,7 +56,6 @@ export default function NewEventForm({ handleAddEvent }) {
     setSelectOption("");
   }
 
-
   return(
     <form onSubmit={handleSubmit}>
     <h3>Create a new event</h3>

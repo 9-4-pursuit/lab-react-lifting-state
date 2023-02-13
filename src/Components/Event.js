@@ -2,7 +2,7 @@ import { useState } from "react";
 import Attendees from "./Attendees";
 
 
-Event = ({event, updateEventAttendance}) => {
+const Event = ({event, updateEventAttendance, attendees}) => {
   const [showAttendees, setShowAttendees] = useState(false);
 
   function toggleEventAttendees() {

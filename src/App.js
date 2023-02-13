@@ -1,7 +1,6 @@
 import { useState } from "react";
 import eventsData from "./data";
 
-import Attendees from "./Attendees";
 import Event from "./Components/Event";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
@@ -31,22 +30,21 @@ function App() {
 
   return (
     <div className="App">
-      <header /> 
+      <Header />
       <main>
         <div className="new-event">
-          <NewEventForm handleAddEvent={handleAddEvent}/>
+          <NewEventForm handleAddEvent={handleAddEvent} />
         </div>
         <div className="events">
           <ul>
             {events.map((event) => {
               const { people: attendees } = event;
-
-              return <Event events={events} attendees={attendees} updateEventAttendance={updateEventAttendance} />;
+              return <Event event={event} attendees={attendees} updateEventAttendance={updateEventAttendance} />;
             })}
           </ul>
         </div>
       </main>
-      <footer />
+      <Footer />
     </div>
   );
 }
