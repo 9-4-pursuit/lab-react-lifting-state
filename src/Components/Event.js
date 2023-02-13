@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Attendees from "./Attendees";
 
-
 const Event = ({event, updateEventAttendance, attendees}) => {
   const [showAttendees, setShowAttendees] = useState(false);
 
@@ -10,7 +9,6 @@ const Event = ({event, updateEventAttendance, attendees}) => {
   }
 
   return(
-
     <li key={event.id}>
       <img src={event.eventImage} alt={event.name} />
       <h5>
