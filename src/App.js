@@ -107,7 +107,6 @@ function App() {
                   key={event.id}
                   event={event}
                   attendees={attendees} 
-                  showAttendees={showAttendees}
                   updateEventAttendance={updateEventAttendance}
                   />
               );
