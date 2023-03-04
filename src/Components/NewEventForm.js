@@ -1,4 +1,4 @@
-export default function NewEventForm({ newEvent, handleAddEvent, handleSubmit, handleSelectChange,handleTextChange }) {
+export default function NewEventForm({ newEvent, handleSubmit, handleSelectChange,handleTextChange }) {
   return (
     <form onSubmit={handleSubmit}>
     <h3>Create a new event</h3>
