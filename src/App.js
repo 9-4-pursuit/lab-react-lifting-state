@@ -3,8 +3,8 @@ import eventsData from "./data";
 import NewEventForm from "./Components/NewEventForm";
 // import Attendees from "./Attendees";
 import Event from "./Components/Event";
-// import Footer from "./Components/Footer";
-// import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Header from "./Components/Header";
 
 function App() {
   const [events, setEvents] = useState(eventsData);
@@ -30,11 +30,7 @@ function App() {
 
   return (
     <div className="App">
-      <>
-        <header>
-          <h1 className="color-change-5x">RSVP App</h1>
-        </header>
-      </>
+        <Header />
       <main>
         <div className="new-event">
           <NewEventForm handleAddEvent={handleAddEvent}/>
@@ -51,15 +47,7 @@ function App() {
           </ul>
         </div>
       </main>
-      <>
-        <footer>
-          <ul>
-            <li>Contact</li>
-            <li>About</li>
-            <li>Legal</li>
-          </ul>
-        </footer>
-      </>
+      <Footer />
     </div>
   );
 }
