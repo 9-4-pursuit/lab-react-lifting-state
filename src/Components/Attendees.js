@@ -14,14 +14,15 @@ export default function Attendees({ event, events, setEvents, attendees }) {
       <button onClick={toggleEventAttendees}>
         {!showAttendees ? "Show Attendees" : "Hide Attendees"}
       </button>
+      
       {showAttendees ? (
-      <div className="attendees">
-        {attendees.map((attendee, index) => (
-          <>
-            <Attendee key={index} event={event} events={events} setEvents={setEvents} attendee={attendee} />
-          </>
-        ))}
-      </div>
+        <div className="attendees">
+          {attendees.map((attendee, index) => (
+            <>
+              <Attendee key={attendee.div} event={event} events={events} setEvents={setEvents} attendee={attendee} />
+            </>
+          ))}
+        </div>
       ) : null}
     </div>
   )
