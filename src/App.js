@@ -9,34 +9,12 @@ function App() {
 
   const [events, setEvents] = useState(eventsData);
 
-  const [showAttendees, setShowAttendees] = useState(false);
-
-  function toggleEventAttendees() {
-    setShowAttendees(!showAttendees);
-  }
-
-  function updateEventAttendance(eventId, attendeeId) {
-    const eventArray = [...events];
-    const eventIndex = eventArray.findIndex((event) => eventId === event.id);
-    const event = { ...eventArray[eventIndex] };
-    const personIndex = event.people.findIndex(
-      (person) => person.id === attendeeId
-    );
-    const peopleArray = [...event.people];
-    peopleArray[personIndex].attendance = !peopleArray[personIndex].attendance;
-    event.people = peopleArray;
-    eventArray[eventIndex] = event;
-    setEvents(eventArray);
-  }
-
   return (
     <div className="App">
       <>
           <Header />
       </>
-
       <main>
-
         <div className="new-event">
           <>
             <NewEventForm events={events} setEvents={setEvents} />
@@ -49,13 +27,12 @@ function App() {
               const { people: attendees } = event;
               return (
                 <>
-                  <Event event={event} showAttendees={showAttendees}/>
+                  <Event key={event.id} event={event} events={events} setEvents={setEvents} attendees={attendees} />
                 </>
               );
             })}
           </ul>
         </div>
-
       </main>
 
       <>

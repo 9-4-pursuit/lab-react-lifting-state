@@ -1,6 +1,11 @@
 import Attendee from "./Attendee";
 
-export default function Attendees() {
+export default function Attendees({ showAttendees, setShowAttendees, event, events, setEvents, attendees }) {
+
+  function toggleEventAttendees() {
+    setShowAttendees(!showAttendees);
+  }
+
   return (
     <div>
       <button onClick={toggleEventAttendees}>
@@ -10,7 +15,7 @@ export default function Attendees() {
       <div className="attendees">
         {attendees.map((attendee, index) => (
           <>
-            <Attendee/>
+            <Attendee key={index} event={event} events={events} setEvents={setEvents} attendee={attendee} />
           </>
         ))}
       </div>

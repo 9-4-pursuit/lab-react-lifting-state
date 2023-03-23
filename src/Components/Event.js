@@ -1,6 +1,10 @@
 import Attendees from "./Attendees";
+import { useState } from "react";
 
-export default function Event({ event, showAttendees }) {
+export default function Event({ event, events, setEvents, attendees }) {
+
+  const [showAttendees, setShowAttendees] = useState(false);
+
   return (
     <div>
       <li key={event.id}>
@@ -12,9 +16,8 @@ export default function Event({ event, showAttendees }) {
         <span>Organized by: {event.organizer} </span>
         <br />
         <>
-
           {showAttendees ? (
-            <Attendees/>
+            <Attendees showAttendees={showAttendees} setShowAttendees={setShowAttendees} event={event} events={events} setEvents={setEvents} attendees={attendees} />
           ) : null}
         </>
       </li>
