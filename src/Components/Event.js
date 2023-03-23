@@ -1,6 +1,6 @@
 import Attendees from "./Attendees";
 
-export default function Event(props) {
+export default function Event({ event, showAttendees }) {
   return (
     <div>
       <li key={event.id}>

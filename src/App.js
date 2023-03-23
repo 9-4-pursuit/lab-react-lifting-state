@@ -34,26 +34,30 @@ function App() {
       <>
           <Header />
       </>
+
       <main>
+
         <div className="new-event">
           <>
             <NewEventForm events={events} setEvents={setEvents} />
           </>
         </div>
+
         <div className="events">
           <ul>
             {events.map((event) => {
               const { people: attendees } = event;
-
               return (
                 <>
-                  <Event event={event}/>
+                  <Event event={event} showAttendees={showAttendees}/>
                 </>
               );
             })}
           </ul>
         </div>
+
       </main>
+
       <>
         <Footer />
       </>
